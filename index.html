@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Two Numbers</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Add Two Numbers</h2>
+        <form id="addForm">
+            <div class="form-group">
+                <label for="number1">Number 1:</label>
+                <input type="number" id="number1" required>
+            </div>
+            <div class="form-group">
+                <label for="number2">Number 2:</label>
+                <input type="number" id="number2" required>
+            </div>
+            <div class="form-group">
+                <input type="button" value="Add" onclick="addNumbers()">
+            </div>
+            <div class="form-group">
+                <label for="result">Result:</label>
+                <input type="text" id="result" readonly>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function addNumbers() {
+            // Get the value of the two numbers
+            var number1 = parseFloat(document.getElementById('number1').value);
+            var number2 = parseFloat(document.getElementById('number2').value);
+
+            // Check if the inputs are numbers
+            if (isNaN(number1) || isNaN(number2)) {
+                alert("Please enter valid numbers");
+                return;
+            }
+
+            // Add the two numbers
+            var sum = number1 + number2;
+
+            // Display the result
+            document.getElementById('result').value = sum;
+        }
+    </script>
+</body>
+</html>
